@@ -2,7 +2,8 @@ import Hyperbeam from "@hyperbeam/web";
 import * as BABYLON from "babylonjs";
 
 async function fetchEmbedUrl() {
-  const embedURL = "https://ctowmpnrcyxcvk1dnrgwgwp74.hyperbeam.com/bPOoopO6RWmWftCOIui2zg?token=23h2DG_4xtqpPOO41vHwjbbaKVPhFBeKDkZEfd8S2U4"; // Are you running this locally and have an embed URL? Paste it here.
+  const embedURL =
+    "https://ctowmpnrcyxcvk1dnrgwgwp74.hyperbeam.com/bPOoopO6RWmWftCOIui2zg?token=23h2DG_4xtqpPOO41vHwjbbaKVPhFBeKDkZEfd8S2U4"; // Are you running this locally and have an embed URL? Paste it here.
   if (embedURL) return embedURL;
   const room = location.pathname.substring(1);
   const response = await fetch(`https://demo-api.tutturu.workers.dev/${room}`);
@@ -128,7 +129,7 @@ async function onWindowLoad() {
           hyperbeamPromise = Hyperbeam(hyperbeamContainer, embedURL, {
             frameCb,
             audioTrackCb,
-            sendToAPI
+            sendToAPI,
           });
           hyperbeam = await hyperbeamPromise;
           pointerObservable = scene.onPointerObservable.add((pointerInfo) =>
