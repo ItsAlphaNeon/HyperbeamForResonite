@@ -8,6 +8,8 @@ const io = socketIO(server);
 
 let frameData;
 
+
+
 // Socket.IO connection
 io.on('connection', socket => {
     console.log('A user connected');

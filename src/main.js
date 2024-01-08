@@ -60,7 +60,6 @@ async function onWindowLoad() {
       plane.material.diffuseTexture.update(frame);
     }
 
-
     function audioTrackCb(audioTrack) {
       const stream = new MediaStream([audioTrack]);
       const sound = new BABYLON.Sound("sound", stream, scene, null, {
@@ -129,6 +128,7 @@ async function onWindowLoad() {
           hyperbeamPromise = Hyperbeam(hyperbeamContainer, embedURL, {
             frameCb,
             audioTrackCb,
+            sendToAPI
           });
           hyperbeam = await hyperbeamPromise;
           pointerObservable = scene.onPointerObservable.add((pointerInfo) =>
